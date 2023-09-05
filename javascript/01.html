@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    span{
+        display: inline-block;
+        width: 86.6px;
+        padding: 5px 10px;
+        border: 1px solid pink;
+        margin: 2px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px rgb(251, 212, 219);
+        text-align: center;
+    }
+</style>
+</head>
+
+<body>
+<script>
+    let i=0
+
+    while(i<10)
+    {
+        let j = 0
+        while(j<i+1)
+        {
+            document.write(`<span>${i}X ${j}=${i*j}</span>`)
+            j++
+        }
+        document.write('<br>')
+        i++
+    }
+    alert(num)
+</script>
+</body>
+</html>
