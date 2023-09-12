@@ -11,6 +11,10 @@ a {
     text-decoration: none;
 }
 
+body {
+    background-color: #f3f5f7;
+}
+
 .w {
     width: 1200px;
     margin: auto;
@@ -18,7 +22,6 @@ a {
 
 .header {
     height: 42px;
-    background-color: pink;
     margin: 30px auto;
 }
 
@@ -52,4 +55,202 @@ a {
 .nav ul li a:hover {
     border-bottom: 2px solid #00a4ff;
     color: #00a4ff;
+}
+
+
+/* 搜索模块 */
+.search {
+    width: 412px;
+    height: 42px;
+
+    float: left;
+    margin-left: 95px;
+}
+
+.search input {
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+
+    color: #bfbfbf;
+    font-size: 14px;
+    padding-left: 15px;
+
+    float: left;
+}
+
+.search button {
+    background-color: #00a4ff;
+    border: 0;
+    width: 50px;
+    height: 42px;
+
+    float: left;
+}
+
+/* 用户名模块 */
+.user {
+
+    height: 42px;
+    color: #7e7e7f;
+
+    float: right;
+    line-height: 42px;
+    font-size: 14px;
+    margin-right: 30px;
+
+}
+
+.user img {
+    float: left;
+}
+
+.user p {
+    float: left;
+
+}
+
+
+/* body */
+.banner {
+    background-color: #1c036c;
+    height: 420px;
+    margin: auto;
+}
+
+.banner .w {
+    height: 420px;
+    background: url(img/banner2.png);
+
+}
+
+.banner .w .subnav {
+    width: 190px;
+    height: 413px;
+    background-color: rgba(0, 0, 0, 0.3);
+    float: left;
+
+    padding-top: 7px;
+}
+
+.banner .w .subnav li {
+    height: 45px;
+    font-size: 14px;
+    line-height: 45px;
+}
+
+.banner .w .subnav li a {
+    color: #ffffff;
+    margin-left: 20px;
+}
+
+.banner .w .subnav a span {
+    float: right;
+    margin-right: 20px;
+}
+
+.banner .w .subnav li a:hover {
+    color: #00a4ff;
+}
+
+
+.banner .w .course {
+    float: right;
+}
+
+
+.banner .course {
+    height: 300px;
+    width: 230px;
+    background-color: white;
+
+    float: right;
+
+    margin-top: 50px;
+}
+
+.banner .course h3 {
+    height: 50px;
+    line-height: 50px;
+    background-color: #9bceea;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+
+}
+
+
+.bd li {
+    height: 50px;
+    width: 190px;
+
+    margin-top: 14px;
+    margin-left: 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.bd li h4 {
+    font-size: 16px;
+    color: #5a5a5a;
+}
+
+.bd li p {
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-top: 5px;
+}
+
+.bd .more {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid #22b0ff;
+
+    display: block;
+
+    margin-left: 14px;
+    margin-top: 5px;
+}
+
+/* .good */
+
+.good {
+    background-color: white;
+    height: 60px;
+    line-height: 60px;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.good h3 {
+    float: left;
+    font-size: 16px;
+    color: #00a4ff;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.good li {
+    float: left;
+
+}
+
+.good li a {
+    padding: 0 30px;
+    font-size: 16px;
+    color: #050505;
+    border-left: 1px solid #bfbfbf;
+}
+
+.good .mod {
+    float: right;
+    font-size: 14px;
+    color: #00a4ff;
+    margin-right: 30px;
 }
