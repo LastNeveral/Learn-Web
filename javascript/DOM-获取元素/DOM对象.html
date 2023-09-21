@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* .box {
+            width: 200px;
+            height: 200px;
+            color: #000;
+        }
+
+        .active {
+            background-color: darkblue;
+        } */
+
+        .boxs {
+            position: relative;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .boxs img {
+            display: block;
+            width: 400px;
+            height: 100%;
+            margin-bottom: 0;
+        }
+
+        .boxs .lis {
+            width: 400px;
+            height: 40px;
+
+            background-color: rebeccapurple;
+
+
+        }
+
+        .boxs ul {
+            position: absolute;
+            left: 50%;
+            margin-left: -40px;
+        }
+
+
+
+        .point {
+            float: left;
+            margin-right: 15px;
+            width: 10px;
+            height: 10px;
+            background-color: #ab8f91;
+
+            border-radius: 5px;
+            margin-top: 15px;
+
+            transition: all .3s;
+        }
+
+        .point:hover {
+            /* width: 14px;
+            height: 14px; */
+            background-color: white;
+
+            /* border-radius: 7px; */
+
+            transform-origin: 50% 50% 0;
+            transform: scale(1.2);
+
+        }
+
+        .changed {
+            background-color: white;
+            /* width: 14px;
+            height: 14px;
+            border-radius: 7px; */
+            transform-origin: 50% 50% 0;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">100</div>
+    <ul>
+        <li>测试1</li>
+        <li>test2</li>
+        <li>test3</li>
+    </ul>
+    <script>
+        const box = document.querySelector('.box')
+        // div.style.color = 'red'
+        const lis = document.querySelectorAll('ul li')
+        console.log(lis)
+        // for (let i = 0; i < lis.length; i++) {
+        //     console.log(lis[i])
+        // }
+
+        // for (let i = 100; i > 0; i--) { 
+        //     div.innerText--
+        // }
+
+        // box.classList.add('active')
+        // box.classList.remove('box')
+        box.classList.toggle()
+    </script> -->
+
+    <!-- 轮播图 -->
+    <div class="boxs">
+        <img src="img/1.jpg" alt="">
+        <div class="lis">
+            <ul>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function change_img() {
+            let index = i % 4
+            imgs.src = `img/${index + 1}.jpg`
+            if (index == 0) {
+                li[3].classList.remove('changed')
+            }
+            else
+                li[index - 1].classList.remove('changed')
+            li[index].classList.add('changed')
+            lis.style.backgroundColor = colors[index]
+            i++
+        }
+
+        const imgs = document.querySelector('img')
+        const li = document.querySelectorAll('li')
+        const lis = document.querySelector('.lis')
+        const colors = ['#009783', '#0c8b9c', '#e69369', '#663399']
+
+        let random = Math.ceil(Math.random() * 4)
+        console.log(random)
+        console.log(imgs)
+        console.log(lis)
+        // console.log("img/${random}.jpg")
+
+        // 随机开始
+        imgs.src = `img/${random}.jpg`
+        li[random - 1].classList.add('changed')
+        lis.style.backgroundColor = colors[random - 1]
+
+        let i = random
+        // // 自动转化
+        setInterval(change_img, 2000)
+
+
+    </script>
+</body>
+
+</html>
