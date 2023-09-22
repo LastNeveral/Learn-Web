@@ -58,11 +58,11 @@
         .point {
             float: left;
             margin-right: 15px;
-            width: 10px;
-            height: 10px;
-            background-color: #ab8f91;
+            width: 8px;
+            height: 8px;
+            background-color: #c8c9cc;
 
-            border-radius: 5px;
+            border-radius: 4px;
             margin-top: 15px;
 
             transition: all .3s;
@@ -130,38 +130,61 @@
     </div>
 
     <script>
-        function change_img() {
-            let index = i % 4
-            imgs.src = `img/${index + 1}.jpg`
-            if (index == 0) {
-                li[3].classList.remove('changed')
-            }
-            else
-                li[index - 1].classList.remove('changed')
-            li[index].classList.add('changed')
-            lis.style.backgroundColor = colors[index]
-            i++
-        }
 
+        // 初始化
         const imgs = document.querySelector('img')
-        const li = document.querySelectorAll('li')
+        const point = document.querySelectorAll('.point')
         const lis = document.querySelector('.lis')
         const colors = ['#009783', '#0c8b9c', '#e69369', '#663399']
 
-        let random = Math.ceil(Math.random() * 4)
-        console.log(random)
-        console.log(imgs)
-        console.log(lis)
+        let random = Math.floor(Math.random() * 4)
+        // console.log(random)
+        // console.log(imgs)
+        // console.log(lis)
         // console.log("img/${random}.jpg")
+
+        // function point_cc(color) {
+        //     for (let i = 0; i < point.length; i++) {
+        //         point[i].style.backgroundColor = color
+        //         point[i].style.opacity = 0.4
+        //     }
+        // }
+
+        // 事件监听与增加index
+        for (let j = 0; j < point.length; j++) {
+            point[j].dataset.index = j
+            point[j].addEventListener('click', function () {
+                let old_changed = document.querySelector('.changed')
+                old_changed.classList.remove('changed')
+                point[j].classList.add('changed')
+                imgs.src = `img/${j}.jpg`
+                lis.style.backgroundColor = colors[j]
+            })
+        }
 
         // 随机开始
         imgs.src = `img/${random}.jpg`
-        li[random - 1].classList.add('changed')
-        lis.style.backgroundColor = colors[random - 1]
+        point[random].classList.add('changed')
+        lis.style.backgroundColor = colors[random]
+        // point_cc(colors[random])
+        // console.log(point)
 
-        let i = random
-        // // 自动转化
-        setInterval(change_img, 2000)
+        // let i = random
+        // 自动转化
+        setInterval(function change_img() {
+            let old_changed = document.querySelector('.changed')
+            console.log(old_changed.dataset.index)
+            let old_index = Number(old_changed.dataset.index)
+            point[old_index].classList.remove('changed')
+
+            if (old_index == 3) {
+                old_index = -1
+            }
+
+            imgs.src = `img/${old_index + 1}.jpg`
+            point[old_index + 1].classList.add('changed')
+            lis.style.backgroundColor = colors[old_index + 1]
+        }, 3000)
 
 
     </script>
