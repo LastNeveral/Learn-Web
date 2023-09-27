@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .center {
+            margin: 0, auto;
+        }
+
+        h2 {
+            margin: 30px auto;
+            text-align: center;
+        }
+
+
+        .info {
+            width: 900px;
+            margin: 50px auto;
+            text-align: center;
+
+            font-size: 15px;
+        }
+
+        .info input {
+            border: 2px solid #ececec;
+            border-radius: 4px;
+            height: 22px;
+            margin-right: 10px;
+        }
+
+        .info select {
+            border: 2px solid #ececec;
+            border-radius: 4px;
+            height: 26px;
+            width: 80px;
+
+            margin-right: 10px;
+        }
+
+        .info .uname,
+        .salary {
+            width: 40px;
+        }
+
+        .info button {
+            border: 2px solid transparent;
+            border-radius: 4px;
+
+            background-color: #174084;
+            color: white;
+            font-size: 10px;
+
+            height: 26px;
+            width: 40px;
+        }
+
+        .out_line table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+
+        .out_line th {
+            height: 28px;
+            width: 80px;
+            border: 1px solid #ececec;
+            background-color: #d3e5fe;
+
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .out_line td {
+            height: 28px;
+            width: 80px;
+
+            text-align: center;
+
+            border: 1px solid #ececec;
+
+            font-size: 13px;
+            font-weight: 400;
+
+        }
+
+        .out_line tr {
+            background-color: white;
+        }
+
+        .out_line tr:hover {
+            background-color: #e2edf8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="insert_table center">
+        <h2>新增学员</h2>
+        <form class="info" autocomplete="off">
+            姓名：
+            <input type="text" class="uname" name="uname">
+            年龄：
+            <input type="text" class="uage" name="uage">
+            性别：
+            <select name="gender" class="gender">
+                <option value="man">男</option>
+                <option value="woman">女</option>
+            </select>
+            薪资：
+            <input type="text" class="salary" name="salary">
+
+            就业城市：
+            <select name="city" class="city">
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="chengdu">成都</option>
+                <option value="heze">菏泽</option>
+            </select>
+            <button>录入</button>
+        </form>
+    </div>
+    <div class="out_line center">
+        <h2>就业榜</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>薪资</th>
+                    <th>就业城市</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <script>
+        let data = []
+
+        const name = document.querySelector('.uname')
+        const age = document.querySelector('.uage')
+        const gender = document.querySelector('.gender')
+        const salary = document.querySelector('.salary')
+        const city = document.querySelector('.city')
+        const tbody = document.querySelector('tbody')
+
+        const items = document.querySelectorAll('[name]')
+
+        const info = document.querySelector('.info')
+        info.addEventListener('submit', function (e) {
+            e.preventDefault()
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].value == '') {
+                    return alert('输入内容不能为空')
+                }
+            }
+            const obj = {
+                stuId: data.length + 1,
+                uname: name.value,
+                age: age.value,
+                gender: gender.value,
+                salary: salary.value,
+                city: city.value
+            }
+            data.push(obj)
+            // 清空表单
+            this.reset()
+            console.log(info)
+            render()
+        })
+
+        function render() {
+            tbody.innerHTML = ''
+            for (let i = 0; i < data.length; i++) {
+                const tr = document.createElement('tr')
+                tr.innerHTML = `
+                <td>${data[i].stuId}</td>
+                <td>${data[i].uname}</td>
+                <td>${data[i].age}</td>
+                <td>${data[i].gender}</td>
+                <td>${data[i].salary}</td>
+                <td>${data[i].city}</td>
+                <td>
+                    <a href="javascript:" data-id = ${i}>删除</a>
+                </td>
+                `
+                tbody.appendChild(tr)
+
+            }
+
+        }
+        // const name = 
+        tbody.addEventListener('click', function (e) {
+            if (e.target.tagName == 'A') {
+                data.splice(e.target.dataset.id, 1)
+                console.log(data)
+                render()
+            }
+
+        })
+    </script>
+</body>
+
+</html>
