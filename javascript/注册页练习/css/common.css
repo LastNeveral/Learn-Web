@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?o8w3da');
+    src: url('../fonts/icomoon.eot?o8w3da#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?o8w3da') format('truetype'),
+        url('../fonts/icomoon.woff?o8w3da') format('woff'),
+        url('../fonts/icomoon.svg?o8w3da#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.enroll_box {
+    display: block;
+
+    width: 1250px;
+    height: 750px;
+    background-color: #ffffff;
+
+    margin: 100px auto;
+
+}
+
+/* .enroll_box:hover {
+    box-shadow: 10px 5px 5px #e4e3e3;
+} */
+
+.enroll_box h2 {
+    padding-top: 40px;
+    margin-left: 60px;
+    color: #757576;
+    font-size: 25px;
+}
+
+.enroll_table {
+    /* background-color: beige; */
+    margin: 80px auto;
+}
+
+
+
+.enroll_table form li {
+    height: 50px;
+
+    margin-left: 500px;
+    margin-bottom: 25px;
+}
+
+.input_box {
+    float: left;
+    width: 298px;
+    height: 48px;
+    margin-right: 10px;
+
+    border: 1px solid #e4e4e4;
+
+    transition: all 0.3s;
+}
+
+.input_box:hover {
+
+    border: 1.5px solid #007acc;
+}
+
+.input_box .ico {
+    font-family: "icomoon";
+
+    float: left;
+    margin: 0 15px;
+    /* margin: 5px; */
+    line-height: 48px;
+
+    /* transition: all 0.3s; */
+}
+
+/* .input_box .ico:hover {
+    color: #007acc;
+} */
+
+.input_box input {
+    float: left;
+    border: none;
+    outline: none;
+    height: 48px;
+    width: 250px;
+
+    font-size: 13px;
+    color: #c7c5c5;
+}
+
+/* .input_box input:focus {
+    color: black;
+} */
+
+.input_box .duanxin {
+    width: 170px;
+}
+
+.duanxin_input a {
+    float: right;
+
+    height: 48px;
+    line-height: 48px;
+
+    margin-right: 10px;
+}
+
+
+
+.enroll_table .attention {
+    display: none;
+    /* display: inline-block; */
+    color: #a30d2e;
+    font-size: 13px;
+    line-height: 48px;
+
+    /* margin-left: 10px; */
+}
+
+
+
+.enroll_table .read_li {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.isread {
+    width: 13px;
+    height: 13px;
+
+    margin-left: 40px;
+    margin-right: 8px;
+
+    vertical-align: middle;
+}
+
+.enroll_table a {
+    font-size: 13px;
+    color: #007acc;
+}
+
+.enroll_table button {
+    height: 48px;
+    width: 300px;
+
+    border: none;
+    color: white;
+
+    background-color: #007acc;
+
+    transition: all 0.3s;
+}
+
+.enroll_table button:hover {
+    background-color: #0261a0;
+}
