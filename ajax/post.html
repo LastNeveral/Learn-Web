@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>zhuce</button>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+        const subs = document.querySelector('button')
+        subs.addEventListener('click', function (e) {
+            e.preventDefault()
+            const config = {
+                url: 'https://hmajax.itheima.net/api/register',
+                method: 'post',
+                data: {
+                    username: 'abc123456',
+                    password: '12345678'
+                }
+            }
+            axios(config).then(result => {
+                console.log(result)
+            }).catch(error => {
+                console.log(error);
+                console.log(error.response.data.message);
+                alert(error.response.data.message)
+            })
+        })
+
+    </script>
+</body>
+
+</html>
