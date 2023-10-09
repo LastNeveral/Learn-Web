@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function myAxios(config) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest()
+                xhr.open(config.method || 'GET', config.url)
+                xhr.addEventListener('loadend', () => {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        resolve(JSON.parse(xhr.response))
+                    }
+                    else {
+                        reject(new Error(xhr.response))
+                    }
+                })
+                xhr.send()
+            })
+        }
+
+        const ax = myAxios({
+            url: "https://hmajax.itheima.net/api/province"
+        }).then((result) => {
+            console.log(result)
+        }).catch((result) => {
+            console.log(result)
+        })
+        console.log(ax)
+    </script>
+</body>
+
+</html>
